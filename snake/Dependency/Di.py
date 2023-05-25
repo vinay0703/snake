@@ -1,7 +1,6 @@
 import pygame, random
 from enum import Enum
 from collections import namedtuple
-from snake.Utils.HumanSnakeGame import HumanSnakeGame
 import snake.constants as constants
 
 class Di(object):
@@ -21,5 +20,3 @@ class Di(object):
         # utils
         Di.constants = constants
     
-    def _init_pygame_functions(self):
-        Di.human_snake_game = HumanSnakeGame(Di)
