@@ -1,5 +1,6 @@
 import Dependency.Di as Di
 from Utils.SnakeGame import SnakeGame
+
 """This class inherits from SnakeGame and it is manual control of snake game."""
 class ManualSnakeGame(SnakeGame):
     def __init__(self):
@@ -22,25 +23,21 @@ class ManualSnakeGame(SnakeGame):
                     self.direction = self.direction_enum.DOWN
         # 2. move
         self._move(self.direction) # update the head
-        self.snake.insert(0, self.head)
-        
+        self.snake.insert(0, self.head)        
         # 3. check if game over
         game_over = False
         if self._if_collision():
             game_over = True
             return game_over, self.score
-            
         # 4. place new food or just move
         if self.head == self.food:
             self.score += 1
             self._place_food()
         else:
             self.snake.pop()
-        
         # 5. update ui and clock
         self._update_ui()
         self.clock.tick(Di.constants.SNAKE_SPEED)
-
         # 6. return game over and score
         return game_over, self.score
             

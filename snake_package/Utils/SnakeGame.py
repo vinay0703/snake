@@ -1,9 +1,8 @@
-"""Snake game class which is common to both human control and computer control."""
 import Dependency.Di as Di
-
+"""Snake game class which is common to both human control and computer control."""
 class SnakeGame:
     def __init__(self):
-        self.direction_enum = Di.Enum('Direction', ['RIGHT', 'LEFT', 'UP', 'DOWN'])
+        self.direction_enum = Di.Enum(Di.constants.DIRECTION_ENUM_NAME, Di.constants.DIRECTION_ENUM_VALUE)
         self.point = Di.namedtuple('Point', 'x, y')
         # Initializing pygame
         Di.pygame.init()
@@ -24,8 +23,7 @@ class SnakeGame:
         self.direction = self.direction_enum.RIGHT
         # Initial snake head position is at centre of pygame display
         self.head = self.point(self.w/2, self.h/2)
-        # Inital snake body contains of 3 blocks # TODO
-  ################################################################################
+        # Inital snake body contains of 3 blocks
         self.snake = [self.head, self.point(self.head.x - self.block_size, self.head.y), self.point(self.head.x - 2 * self.block_size, self.head.y)]
         # Initally score is 0 and no food
         self.score, self.food = 0, None
@@ -55,17 +53,15 @@ class SnakeGame:
     def _update_ui(self):
         # Background in black color
         self.display.fill(Di.constants.BLACK)
-        # Displaying snake head and body in blue color variation
+        # Displaying snake block with border (BLUE1) and fill (BLUE2) blue color variation.
         for pt in self.snake:
             Di.pygame.draw.rect(self.display, Di.constants.BLUE1, Di.pygame.Rect(pt.x, pt.y, self.block_size, self.block_size))
             Di.pygame.draw.rect(self.display, Di.constants.BLUE2, Di.pygame.Rect(pt.x+4, pt.y+4, 12, 12))
-            
         # Displaying food in red color
         Di.pygame.draw.rect(self.display, Di.constants.RED, Di.pygame.Rect(self.food.x, self.food.y, self.block_size, self.block_size))
-        
         # Displaying updated score
         text = self.font.render("Score: " + str(self.score), True, Di.constants.WHITE)
-        self.display.blit(text, [0, 0])
+        self.display.blit(text, Di.constants.SCORE_DISPLAY_POSITION)
         Di.pygame.display.flip()
     
     def _move(self, direction):

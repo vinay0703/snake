@@ -10,10 +10,9 @@ HEIGHT = 480
 DISPLAY_CAPTION = 'Snake Game'
 
 # Direction Enum values
-RIGHT = 1
-LEFT = 2
-UP = 3
-DOWN = 4
+# 1 2 3 4
+DIRECTION_ENUM_NAME = 'Direction'
+DIRECTION_ENUM_VALUE = ['RIGHT', 'LEFT', 'UP', 'DOWN']
 
 # rgb colors
 WHITE = (255, 255, 255)
@@ -25,6 +24,7 @@ BLACK = (0,0,0)
 # game
 BLOCK_SIZE = 20
 SNAKE_SPEED = 20
+SCORE_DISPLAY_POSITION = [0, 0]
 
 # text
 BREAK_LINE = '##################################################'
