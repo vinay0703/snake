@@ -1,1 +1,2 @@
 from Utils.ManualSnakeGame import ManualSnakeGame
+from Utils.AutoSnakeGame import AutoSnakeGame

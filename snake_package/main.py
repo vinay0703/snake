@@ -9,14 +9,14 @@ class Menu:
         play_mode_choice = int(input())
         if play_mode_choice == 1:
             self.printText(self.di.constants.COMPUTER_PLAY_MODE)
-            self.computer_play_mode()
+            self.auto_play_mode()
         elif play_mode_choice == 2:
             self.printText(self.di.constants.MANUAL_PLAY_MODE)
             self.manual_play_mode()
         else:
             self.printText(self.di.constants.INVALID_PLAY_MODE)
 
-    def computer_play_mode(self):
+    def auto_play_mode(self):
         pass
 
     def manual_play_mode(self):

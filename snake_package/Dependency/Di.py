@@ -1,4 +1,4 @@
-import pygame, random
+import pygame, random, numpy
 from enum import Enum
 from collections import namedtuple
 import constants as constants
@@ -6,7 +6,7 @@ import Utils.ManualSnakeGame as ManualSnakeGame
 
 class Di(object):
     # packages
-    pygame, namedtuple, random, enum = None, None, None, None
+    pygame, namedtuple, random, numpy, enum = None, None, None, None, None
     # utils
     constants, manual_snake_game = None, None
     
@@ -16,6 +16,7 @@ class Di(object):
         Di.namedtuple = namedtuple
         Di.random = random
         Di.enum = Enum
+        Di.numpy = numpy
         # utils
         Di.constants = constants
     

@@ -35,3 +35,6 @@ MANUAL_PLAY_MODE = '\nManual play mode selected.'
 INVALID_PLAY_MODE = '\nInvalid selection. Please restart the code again :('
 ## game score
 FINAL_GAME_SCORE = '\nFinal game score: '
+
+# Auto play mode
+ITER_THRESHOLD = 100 # If snake is at same size for threshold, i.e; doesn't eat food just roam it is a bad action.

@@ -53,3 +53,15 @@ class ManualSnakeGame(SnakeGame):
                 break
         print(Di.constants.FINAL_GAME_SCORE + str(score))
         Di.pygame.quit()
+
+    def _move(self, direction):
+        x, y = self.head.x, self.head.y
+        if direction == self.direction_enum.RIGHT:
+            x += self.block_size
+        elif direction == self.direction_enum.LEFT:
+            x -= self.block_size
+        elif direction == self.direction_enum.UP:
+            y -= self.block_size # Pygame window y-axis starts from top
+        else:
+            y += self.block_size
+        self.head = self.point(x, y)
