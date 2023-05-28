@@ -38,3 +38,7 @@ FINAL_GAME_SCORE = '\nFinal game score: '
 
 # Auto play mode
 ITER_THRESHOLD = 100 # If snake is at same size for threshold, i.e; doesn't eat food just roam it is a bad action.
+## Agent
+EPSILON = 80
+DISCOUNT_FACTOR = 0.9
+EXPLORATION_THRESHOLD = 200

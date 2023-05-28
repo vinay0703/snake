@@ -2,7 +2,7 @@ import Dependency.Di as Di
 """Snake game class which is common to both human control and computer control."""
 class SnakeGame:
     def __init__(self):
-        self.direction_enum = Di.Enum(Di.constants.DIRECTION_ENUM_NAME, Di.constants.DIRECTION_ENUM_VALUE)
+        self.direction_enum = Di.Direction.direction
         self.point = Di.namedtuple('Point', 'x, y')
         # Initializing pygame
         Di.pygame.init()

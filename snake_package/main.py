@@ -17,7 +17,7 @@ class Menu:
             self.printText(self.di.constants.INVALID_PLAY_MODE)
 
     def auto_play_mode(self):
-        pass
+        self.di._init_auto_snake_game()
 
     def manual_play_mode(self):
         self.di._init_manual_snake_game()
